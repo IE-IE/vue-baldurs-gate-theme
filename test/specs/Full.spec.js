@@ -18,6 +18,7 @@ describe('Full test', function () {
       <div style="height: 200px; border-left: 5px dotted white;"></div>
     </bg-scroll>
     <bg-header :level="1" font="stone">Baldur's Gate</bg-header>
+    <bg-progressbar :progress="0"></bg-progressbar>
   </bg-app>
 `, {
   data () {
