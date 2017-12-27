@@ -56,7 +56,7 @@ module.exports = {
         test: /\.woff2$/,
         loader: 'url-loader',
         options: {
-          limit: 65000,
+          limit: 10000,
           name: posix.join('bg-theme-assets', '[name].[ext]'),
           mimetype: 'font-woff2'
         }

@@ -1,5 +1,5 @@
 /*!
- * vue-baldurs-gate-theme v0.0.1
+ * vue-baldurs-gate-theme v0.0.2
  * (c) 2017 Schizohatter
  * Released under the MIT License.
  */
