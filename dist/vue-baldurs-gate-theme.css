@@ -1,5 +1,5 @@
 /*!
- * vue-baldurs-gate-theme v0.0.2
+ * vue-baldurs-gate-theme v0.0.4
  * (c) 2017 Schizohatter
  * Released under the MIT License.
  */
@@ -242,7 +242,9 @@ body {
 
 .simplebar-outer {
   position: relative;
-  padding: 20px 0;
+  padding: 20px 0 20px 20px;
+  background-image: linear-gradient(to left, rgba(255, 255, 255, .3) 0px, rgba(255, 255, 255, .2) 2px, transparent 3px), linear-gradient(to top, rgba(255, 255, 255, .3) 0px, rgba(255, 255, 255, .2) 2px, transparent 3px), linear-gradient(to right, rgba(0, 0, 0, .8) 0px, rgba(0, 0, 0, .6) 3px, transparent 4px), linear-gradient(to bottom, rgba(0, 0, 0, .8) 0px, rgba(0, 0, 0, .6) 3px, transparent 4px), linear-gradient(to right, rgba(0, 0, 0, .5) 0%, rgba(0, 0, 0, .5) 100%), url(bg-theme-assets/texture.jpg);
+  background-position: 0% 0%;
 }
 .simplebar-button-up, .simplebar-button-down {
   position: absolute;
@@ -314,6 +316,30 @@ body {
 }
 .simplebar-track.horizontal {
   display: none;
+}
+
+.bg-header[data-v-60c94936] {
+  font-size: 19.2px;
+  font-size: 1.2rem;
+  color: #f0f0f0;
+  text-shadow: 0 0 1px #000, -1px -1px 1px #000, -2px -2px 0px #000;
+}
+.bg-header[data-v-60c94936]::first-letter {
+  font-size: 1.4em;
+}
+.bg-header--postanti[data-v-60c94936] {
+  font-family: 'Postanti';
+  text-transform: uppercase;
+}
+.bg-header--feinen[data-v-60c94936] {
+  font-family: 'Feinen';
+}
+.bg-header--stone[data-v-60c94936] {
+  font-family: 'Stone';
+  text-transform: uppercase;
+}
+.bg-header--sherwood[data-v-60c94936] {
+  font-family: 'Sherwood';
 }
 @font-face {
   font-family: 'Sherwood';
