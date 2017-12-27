@@ -1,6 +1,7 @@
 .simplebar-outer {
     position: relative;
-    padding: 20px 0;
+    padding: 20px 0 20px 20px;
+    @include textured-chiseled('dark', 'inner');
 }
 
 .simplebar-button-up, .simplebar-button-down {

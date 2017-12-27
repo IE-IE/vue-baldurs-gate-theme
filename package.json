@@ -1,6 +1,6 @@
 {
   "name": "vue-baldurs-gate-theme",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Baldur's Gate Theme based on Vue.js",
   "author": "Schizohatter <soanvig@gmail.com>",
   "main": "dist/vue-baldurs-gate-theme.common.js",

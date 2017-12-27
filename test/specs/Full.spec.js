@@ -17,6 +17,7 @@ describe('Full test', function () {
       :clickScrollValue="50">
       <div style="height: 200px; border-left: 5px dotted white;"></div>
     </bg-scroll>
+    <bg-header :level="1" font="stone">Baldur's Gate</bg-header>
   </bg-app>
 `, {
   data () {
