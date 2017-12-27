@@ -1,0 +1,13 @@
+@mixin cursor ($type) {
+    $cursor: '';
+
+    @if ($type == 'hand') {
+        $cursor: '00'
+    }
+
+    @if ($type == 'hand-pressed') {
+        $cursor: '20'
+    }
+
+    cursor: url('~@/assets/images/cursors/CURSORS000#{$cursor}.png'), default;
+}

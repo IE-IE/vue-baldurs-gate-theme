@@ -1,0 +1,70 @@
+// $textured: "normal", "dark", "none"
+// $chiseled: "outer", "inner", "flat", "none"
+// (chiseled) $light-size: *
+// (chiseled) $dark-size: *
+// (chiseled) $blur-size: *
+@mixin textured-chiseled( $textured: 'normal', $chiseled: 'outer', $light-size: 2px, $dark-size: 3px, $blur-size: 1px )
+{
+  $background: ();
+  $light-1: null;
+  $light-2: null;
+  $dark-1: null;
+  $dark-2: null;
+  $x-pos: 0;
+  $y-pos: 0;
+
+  @if $chiseled == 'outer'
+  {
+    $light-1: to right;
+    $light-2: to bottom;
+    $dark-1: to left;
+    $dark-2: to top;
+  }
+  @if $chiseled == 'inner'
+  {
+    $light-1: to left;
+    $light-2: to top;
+    $dark-1: to right;
+    $dark-2: to bottom;
+  }
+  @if $chiseled == 'flat'
+  {
+    $rules: (
+        linear-gradient( to right, rgba(0, 0, 0, 0.3) 0px, rgba(0, 0, 0, 0.3) $light-size, rgba(255, 255, 255, 0.3) $light-size, rgba(255, 255, 255, 0.3) $light-size * 1.2, transparent $light-size * 2 ),
+        linear-gradient( to bottom, rgba(0, 0, 0, 0.3) 0px, rgba(0, 0, 0, 0.3) $light-size, rgba(255, 255, 255, 0.3) $light-size, rgba(255, 255, 255, 0.3) $light-size * 1.2, transparent $light-size * 2 ),
+        linear-gradient( to top, rgba(255, 255, 255, 0.15) 0px, rgba(255, 255, 255, 0.15) $light-size, rgba(0, 0, 0, 0.3) $light-size, rgba(0, 0, 0, 0.3) $light-size * 1.7, transparent $light-size * 2 ),
+        linear-gradient( to left, rgba(255, 255, 255, 0.15) 0px, rgba(255, 255, 255, 0.15) $light-size, rgba(0, 0, 0, 0.3) $light-size, rgba(0, 0, 0, 0.3) $light-size * 1.7, transparent $light-size * 2 )
+    );
+
+    @each $rule in $rules {
+        $background: append($background, $rule, comma)
+    }
+  }
+  @if $chiseled != 'none' and $chiseled != 'flat'
+  {
+    $rules: (
+      linear-gradient( $light-1, rgba(255, 255, 255, 0.3) 0px, rgba(255, 255, 255, 0.2) $light-size, transparent #{$light-size + $blur-size} ),
+      linear-gradient( $light-2, rgba(255, 255, 255, 0.3) 0px, rgba(255, 255, 255, 0.2) $light-size, transparent #{$light-size + $blur-size} ),
+      linear-gradient( $dark-1, rgba(0, 0, 0, 0.8) 0px, rgba(0, 0, 0, 0.6) $dark-size, transparent #{$dark-size + $blur-size} ),
+      linear-gradient( $dark-2, rgba(0, 0, 0, 0.8) 0px, rgba(0, 0, 0, 0.6) $dark-size, transparent #{$dark-size + $blur-size} )
+    );
+
+    @each $rule in $rules {
+      $background: append($background, $rule, comma)
+    }
+  }
+
+  @if( $textured == 'dark' )
+  {
+    $rule: linear-gradient( to right, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.5) 100% );
+    $background: append($background, $rule, comma);
+  }
+  @if( $textured != 'none' )
+  {
+    $rule: url('~@/assets/images/texture.jpg');
+    $background: append($background, $rule, comma);
+  }
+
+  background-image: $background;
+  background-position: #{$x-pos + '%'} #{$y-pos + '%'};
+}

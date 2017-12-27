@@ -1,0 +1,88 @@
+.simplebar-outer {
+    position: relative;
+    padding: 20px 0;
+}
+
+.simplebar-button-up, .simplebar-button-down {
+    position: absolute;
+    right: 0;
+    width: 21px;
+    height: 20px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-color: transparent;
+    box-sizing: border-box;
+    border: 0;
+}
+
+.simplebar-button-up {
+    top: 0;
+    background-image: url("~@/assets/images/slider2/GUISTSCR00000.png");
+
+    &:active {
+        background-image: url("~@/assets/images/slider2/GUISTSCR00001.png");
+    }
+}
+
+.simplebar-button-down {
+    bottom: 0;
+    background-image: url("~@/assets/images/slider2/GUISTSCR00002.png");
+
+    &:active {
+        background-image: url("~@/assets/images/slider2/GUISTSCR00003.png");
+    }
+}
+
+[data-simplebar] {
+    position: relative;
+    z-index: 0;
+    overflow: hidden;
+    -webkit-overflow-scrolling: touch; /* Trigger native scrolling for mobile, if not supported, plugin is used. */
+}
+
+[data-simplebar="init"] {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+.simplebar-scroll-content {
+    overflow-x: hidden;
+    overflow-y: scroll;
+    min-width: 100%;
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box;
+}
+
+.simplebar-content {
+    overflow-x: scroll;
+    overflow-y: hidden;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    min-height: 100%;
+}
+
+.simplebar-track {
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 21px;
+    background: url("~@/assets/images/slider2/GUISTSCR00005.png") repeat-y;
+    background-size: 100% auto;
+    visibility: visible !important;
+}
+
+.simplebar-scrollbar {
+    position: absolute;
+    right: 3px;
+    border-radius: 3px;
+    width: 14px;
+
+    @include textured-chiseled('normal', 'outer', 1px, 1px);
+}
+
+.simplebar-track.horizontal {
+    display: none;
+}
