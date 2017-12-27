@@ -1,6 +1,6 @@
 {
   "name": "vue-baldurs-gate-theme",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Baldur's Gate Theme based on Vue.js",
   "author": "Schizohatter <soanvig@gmail.com>",
   "main": "dist/vue-baldurs-gate-theme.common.js",
@@ -97,7 +97,8 @@
     "webpack-dashboard": "^0.4.0",
     "webpack-dev-server": "^2.4.0",
     "webpack-merge": "^4.0.0",
-    "yarn-or-npm": "^2.0.0"
+    "yarn-or-npm": "^2.0.0",
+    "sass-loader": "^6.0.6"
   },
   "peerDependencies": {
     "vue": "^2.3.0"
@@ -133,7 +134,6 @@
   },
   "dependencies": {
     "mm-jsr": "^0.1.8",
-    "sass-loader": "^6.0.6",
     "simplebar": "^2.5.1"
   }
 }
