@@ -1,5 +1,5 @@
 /*!
- * vue-baldurs-gate-theme v0.0.5
+ * vue-baldurs-gate-theme v0.0.6
  * (c) 2017 Schizohatter
  * Released under the MIT License.
  */
@@ -331,7 +331,13 @@ exports.default = {
   name: 'bg-checkbox',
   props: {
     id: String,
-    label: String
+    label: String,
+    value: Boolean
+  },
+  methods: {
+    updateValue: function updateValue(value) {
+      this.$emit('input', value);
+    }
   }
 };
 
@@ -533,10 +539,15 @@ exports.default = {
   props: {
     id: String,
     label: String,
-    placeholder: String
+    placeholder: String,
+    value: [String, Number]
   },
   computed: {},
-  methods: {}
+  methods: {
+    updateValue: function updateValue(value) {
+      this.$emit('input', value);
+    }
+  }
 };
 
 /***/ }),
@@ -1123,7 +1134,7 @@ module.exports.render._withStripped = true
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
     staticClass: "bg-checkbox"
-  }, [_vm._ssrNode("<input type=\"checkbox\"" + (_vm._ssrAttr("id", _vm.id)) + " class=\"bg-checkbox_input\" data-v-369d48b6> <label" + (_vm._ssrAttr("for", _vm.id)) + " class=\"bg-checkbox_label\" data-v-369d48b6>" + _vm._ssrEscape(_vm._s(_vm.label)) + "</label>")])
+  }, [_vm._ssrNode("<input type=\"checkbox\"" + (_vm._ssrAttr("id", _vm.id)) + (_vm._ssrAttr("checked", _vm.value)) + " class=\"bg-checkbox_input\" data-v-369d48b6> <label" + (_vm._ssrAttr("for", _vm.id)) + " class=\"bg-checkbox_label\" data-v-369d48b6>" + _vm._ssrEscape(_vm._s(_vm.label)) + "</label>")])
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 
@@ -1134,7 +1145,7 @@ module.exports.render._withStripped = true
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
     staticClass: "bg-textfield"
-  }, [_vm._ssrNode(((_vm.label) ? ("<label" + (_vm._ssrAttr("for", _vm.id)) + " class=\"bg-textfield_label\" data-v-47771208>" + _vm._ssrEscape(_vm._s(_vm.label)) + "</label>") : "<!---->") + " <input type=\"text\"" + (_vm._ssrAttr("id", _vm.id)) + (_vm._ssrAttr("placeholder", _vm.placeholder)) + " class=\"bg-textfield_field\" data-v-47771208>")])
+  }, [_vm._ssrNode(((_vm.label) ? ("<label" + (_vm._ssrAttr("for", _vm.id)) + " class=\"bg-textfield_label\" data-v-47771208>" + _vm._ssrEscape(_vm._s(_vm.label)) + "</label>") : "<!---->") + " <input type=\"text\"" + (_vm._ssrAttr("id", _vm.id)) + (_vm._ssrAttr("placeholder", _vm.placeholder)) + (_vm._ssrAttr("value", _vm.value)) + " class=\"bg-textfield_field\" data-v-47771208>")])
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 

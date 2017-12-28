@@ -1,5 +1,5 @@
 /*!
- * vue-baldurs-gate-theme v0.0.5
+ * vue-baldurs-gate-theme v0.0.6
  * (c) 2017 Schizohatter
  * Released under the MIT License.
  */
@@ -340,7 +340,13 @@ exports.default = {
   name: 'bg-checkbox',
   props: {
     id: String,
-    label: String
+    label: String,
+    value: Boolean
+  },
+  methods: {
+    updateValue: function updateValue(value) {
+      this.$emit('input', value);
+    }
   }
 };
 
@@ -542,10 +548,15 @@ exports.default = {
   props: {
     id: String,
     label: String,
-    placeholder: String
+    placeholder: String,
+    value: [String, Number]
   },
   computed: {},
-  methods: {}
+  methods: {
+    updateValue: function updateValue(value) {
+      this.$emit('input', value);
+    }
+  }
 };
 
 /***/ }),
@@ -1301,6 +1312,14 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     attrs: {
       "type": "checkbox",
       "id": _vm.id
+    },
+    domProps: {
+      "checked": _vm.value
+    },
+    on: {
+      "change": function($event) {
+        _vm.updateValue($event.target.checked)
+      }
     }
   }), _vm._v(" "), _c('label', {
     staticClass: "bg-checkbox_label",
@@ -1335,6 +1354,14 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "type": "text",
       "id": _vm.id,
       "placeholder": _vm.placeholder
+    },
+    domProps: {
+      "value": _vm.value
+    },
+    on: {
+      "input": function($event) {
+        _vm.updateValue($event.target.value)
+      }
     }
   })])
 },staticRenderFns: []}

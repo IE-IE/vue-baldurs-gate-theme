@@ -3,13 +3,19 @@ export default {
   name: 'bg-checkbox',
   props: {
     id: String,
-    label: String
+    label: String,
+    value: Boolean
+  },
+  methods: {
+    updateValue (value) {
+      this.$emit('input', value);
+    }
   }
 };
 </script>
 <template>
   <div class="bg-checkbox">
-    <input type="checkbox" :id="id" class="bg-checkbox_input">
+    <input type="checkbox" :id="id" class="bg-checkbox_input" :checked="value" @change="updateValue($event.target.checked)">
     <label class="bg-checkbox_label" :for="id">{{ label }}</label>
   </div>
 </template>
@@ -33,7 +39,7 @@ export default {
   font-size: 0.9em;
   line-height: 1;
   user-select: none;
-  
+
   @include carved();
 
   &::after {

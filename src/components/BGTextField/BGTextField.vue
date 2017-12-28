@@ -4,17 +4,22 @@ export default {
   props: {
     id: String,
     label: String,
-    placeholder: String
+    placeholder: String,
+    value: [String, Number]
   },
   computed: {},
-  methods: {}
+  methods: {
+    updateValue (value) {
+      this.$emit('input', value);
+    }
+  }
 };
 </script>
 
 <template>
   <div class="bg-textfield">
     <label :for="id" v-if="label" class="bg-textfield_label">{{ label }}</label>
-    <input type="text" class="bg-textfield_field" :id="id" :placeholder="placeholder">
+    <input type="text" class="bg-textfield_field" :id="id" :placeholder="placeholder" :value="value" @input="updateValue($event.target.value)">
   </div>
 </template>
 
