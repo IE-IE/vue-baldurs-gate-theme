@@ -50,6 +50,10 @@ export default {
     font-size: 1.4em;
   }
 
+  .bg-header--secondary {
+    font-size: 1.1em;
+  }
+
   .bg-header--postanti {
     font-family: 'Postanti';
     text-transform: uppercase;
