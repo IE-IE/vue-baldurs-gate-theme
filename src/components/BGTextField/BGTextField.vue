@@ -5,7 +5,8 @@ export default {
     id: String,
     label: String,
     placeholder: String,
-    value: [String, Number]
+    value: [String, Number],
+    vertical: Boolean
   },
   computed: {},
   methods: {
@@ -17,7 +18,7 @@ export default {
 </script>
 
 <template>
-  <div class="bg-textfield">
+  <div class="bg-textfield" :class="{ 'bg-textfield--vertical': vertical }">
     <label :for="id" v-if="label" class="bg-textfield_label">{{ label }}</label>
     <input type="text" class="bg-textfield_field" :id="id" :placeholder="placeholder" :value="value" @input="updateValue($event.target.value)">
   </div>
@@ -30,6 +31,18 @@ export default {
 
 .bg-textfield {
   font-size: 1rem;
+  display: flex;
+  width: 100%;
+  align-items: stretch;
+}
+
+.bg-textfield--vertical {
+  flex-direction: column;
+
+  .bg-textfield_label {
+    margin-right: 0;
+    margin-bottom: 0.4em;
+  }
 }
 
 .bg-textfield_label {
@@ -37,9 +50,10 @@ export default {
   font-family: 'Stone';
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  margin-right: 0.25em;
+  margin-right: 0.75em;
   font-size: 0.9em;
   user-select: none;
+  white-space: nowrap;
 
   @include carved();
 }
@@ -50,5 +64,6 @@ export default {
   padding: 0.5em 1em;
   font: 1.1rem 'Postanti';
   @include textured-chiseled('dark', 'flat');
+  flex-basis: 100%;
 }
 </style>
