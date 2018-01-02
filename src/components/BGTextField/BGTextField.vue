@@ -33,11 +33,12 @@ export default {
   font-size: 1rem;
   display: flex;
   width: 100%;
-  align-items: stretch;
+  align-items: center;
 }
 
 .bg-textfield--vertical {
   flex-direction: column;
+  align-items: stretch;
 
   .bg-textfield_label {
     margin-right: 0;
