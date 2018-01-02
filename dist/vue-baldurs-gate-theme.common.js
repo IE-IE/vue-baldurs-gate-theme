@@ -1,6 +1,6 @@
 /*!
- * vue-baldurs-gate-theme v0.0.7
- * (c) 2017 Schizohatter
+ * vue-baldurs-gate-theme v0.0.8
+ * (c) 2018 Schizohatter
  * Released under the MIT License.
  */
 
@@ -582,7 +582,8 @@ exports.default = {
     id: String,
     label: String,
     placeholder: String,
-    value: [String, Number]
+    value: [String, Number],
+    vertical: Boolean
   },
   computed: {},
   methods: {
@@ -1241,7 +1242,10 @@ module.exports.render._withStripped = true
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
-    staticClass: "bg-textfield"
+    staticClass: "bg-textfield",
+    class: {
+      'bg-textfield--vertical': _vm.vertical
+    }
   }, [_vm._ssrNode(((_vm.label) ? ("<label" + (_vm._ssrAttr("for", _vm.id)) + " class=\"bg-textfield_label\" data-v-47771208>" + _vm._ssrEscape(_vm._s(_vm.label)) + "</label>") : "<!---->") + " <input type=\"text\"" + (_vm._ssrAttr("id", _vm.id)) + (_vm._ssrAttr("placeholder", _vm.placeholder)) + (_vm._ssrAttr("value", _vm.value)) + " class=\"bg-textfield_field\" data-v-47771208>")])
 },staticRenderFns: []}
 module.exports.render._withStripped = true

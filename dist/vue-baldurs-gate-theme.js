@@ -1,6 +1,6 @@
 /*!
- * vue-baldurs-gate-theme v0.0.7
- * (c) 2017 Schizohatter
+ * vue-baldurs-gate-theme v0.0.8
+ * (c) 2018 Schizohatter
  * Released under the MIT License.
  */
 
@@ -591,7 +591,8 @@ exports.default = {
     id: String,
     label: String,
     placeholder: String,
-    value: [String, Number]
+    value: [String, Number],
+    vertical: Boolean
   },
   computed: {},
   methods: {
@@ -1456,7 +1457,10 @@ if (false) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
-    staticClass: "bg-textfield"
+    staticClass: "bg-textfield",
+    class: {
+      'bg-textfield--vertical': _vm.vertical
+    }
   }, [(_vm.label) ? _c('label', {
     staticClass: "bg-textfield_label",
     attrs: {
