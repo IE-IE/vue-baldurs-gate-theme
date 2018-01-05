@@ -583,7 +583,8 @@ exports.default = {
     label: String,
     placeholder: String,
     value: [String, Number],
-    vertical: Boolean
+    vertical: Boolean,
+    fixed: Boolean
   },
   computed: {},
   methods: {
@@ -1246,7 +1247,9 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     class: {
       'bg-textfield--vertical': _vm.vertical
     }
-  }, [_vm._ssrNode(((_vm.label) ? ("<label" + (_vm._ssrAttr("for", _vm.id)) + " class=\"bg-textfield_label\" data-v-47771208>" + _vm._ssrEscape(_vm._s(_vm.label)) + "</label>") : "<!---->") + " <input type=\"text\"" + (_vm._ssrAttr("id", _vm.id)) + (_vm._ssrAttr("placeholder", _vm.placeholder)) + (_vm._ssrAttr("value", _vm.value)) + " class=\"bg-textfield_field\" data-v-47771208>")])
+  }, [_vm._ssrNode(((_vm.label) ? ("<label" + (_vm._ssrAttr("for", _vm.id)) + (_vm._ssrClass("bg-textfield_label", {
+    'bg-textfield_label--fixed': _vm.fixed
+  })) + " data-v-47771208>" + _vm._ssrEscape("\n    " + _vm._s(_vm.label) + "\n  ") + "</label>") : "<!---->") + " <input type=\"text\"" + (_vm._ssrAttr("id", _vm.id)) + (_vm._ssrAttr("placeholder", _vm.placeholder)) + (_vm._ssrAttr("value", _vm.value)) + " class=\"bg-textfield_field\" data-v-47771208>")])
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 

@@ -9,7 +9,7 @@ describe('Full test', function () {
     <bg-button @click="button" outset>Baldur's Gate</bg-button>
     <bg-button @click="button" inset>Baldur's Gate</bg-button>
     <bg-button @click="button" inset outset>Baldur's Gate</bg-button>
-    <bg-textfield label="Most powerfull vanquished" id="name" v-model="input"></bg-textfield>
+    <bg-textfield label="Most powerfull vanquished" id="name" v-model="input" fixed></bg-textfield>
     {{ input }}
     <bg-checkbox label="Some field" id="field" v-model="checkbox"></bg-checkbox>
     {{ checkbox }}

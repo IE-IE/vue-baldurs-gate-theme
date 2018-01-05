@@ -592,7 +592,8 @@ exports.default = {
     label: String,
     placeholder: String,
     value: [String, Number],
-    vertical: Boolean
+    vertical: Boolean,
+    fixed: Boolean
   },
   computed: {},
   methods: {
@@ -1463,10 +1464,13 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   }, [(_vm.label) ? _c('label', {
     staticClass: "bg-textfield_label",
+    class: {
+      'bg-textfield_label--fixed': _vm.fixed
+    },
     attrs: {
       "for": _vm.id
     }
-  }, [_vm._v(_vm._s(_vm.label))]) : _vm._e(), _vm._v(" "), _c('input', {
+  }, [_vm._v("\n    " + _vm._s(_vm.label) + "\n  ")]) : _vm._e(), _vm._v(" "), _c('input', {
     staticClass: "bg-textfield_field",
     attrs: {
       "type": "text",
